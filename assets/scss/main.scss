@@ -1,0 +1,56 @@
+// Variables pour la palette de couleurs
+$primary: #0074c7;     // #0074c7
+$secondary: #00497c;   // #00497c
+$dark: #384050;        // #384050
+$danger: #cd2c2e;      // #cd2c2e
+$success: #82b864;     // #82b864
+$light: #f1f8fc;       // #f1f8fc
+
+// Import de Bootstrap
+@import "~bootstrap/scss/bootstrap";
+
+// Personnalisations supplémentaires
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: $light;
+}
+
+main {
+    flex: 1;
+}
+
+.navbar {
+    background-color: $secondary !important;
+}
+
+.btn-primary {
+    background-color: $primary;
+    border-color: $primary;
+}
+
+.btn-success {
+    background-color: $success;
+    border-color: $success;
+}
+
+.btn-danger {
+    background-color: $danger;
+    border-color: $danger;
+}
+
+.table-dark {
+    background-color: $dark;
+}
+
+.card-header {
+    background-color: $secondary;
+    color: white;
+}
+
+footer {
+    background-color: $dark;
+    color: white;
+    padding: 1rem 0;
+}
