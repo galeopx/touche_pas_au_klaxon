@@ -1,0 +1,53 @@
+# Environment configuration
+.env
+.env.backup
+
+# Composer dependencies
+/vendor/
+composer.lock
+
+# IDE files
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+
+# Cache and logs
+/logs/
+*.log
+*.cache
+
+# User uploaded content
+/public/uploads/
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Configuration files with sensitive data
+/config/local.php
+
+# Node modules (if using npm/yarn for frontend)
+/node_modules/
+package-lock.json
+yarn.lock
+
+# Build files
+/public/build/
+/public/hot/
+/public/storage/
+
+# PHPUnit
+.phpunit.result.cache
+/phpunit.xml
+
+# PHPStan
+phpstan.neon
+
+# Documentation
+/docs/
+
+# Temporary files
+*.swp
+*.swo
+.php_cs.cache
