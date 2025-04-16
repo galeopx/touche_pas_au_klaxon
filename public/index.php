@@ -9,7 +9,7 @@
 require_once '../config/config.php';
 
 // Chargement des bibliothèques
-require_once '../vendor/autoload.php';
+require_once __DIR__ . '/../vendor/autoload.php';
 
 // Instancier la base de données
 require_once '../config/database.php';
