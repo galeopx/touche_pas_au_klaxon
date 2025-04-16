@@ -13,7 +13,7 @@ INSERT INTO agence (nom) VALUES
 ('Reims');
 
 -- Insertion des utilisateurs
--- Note: Les mots de passe sont définis comme 'password' haché (à modifier en production)
+-- Note: Les mots de passe sont définis comme 'password' haché
 INSERT INTO utilisateur (nom, prenom, telephone, email, role, password) VALUES
 ('Martin', 'Alexandre', '0612345678', 'alexandre.martin@email.fr', 'user', '$2y$10$LTQtcmXUB3dmMNr5va8hUOE4KTtt7aFtB13jbU0WNjX9MN1gWCHnW'),
 ('Dubois', 'Sophie', '0698765432', 'sophie.dubois@email.fr', 'user', '$2y$10$LTQtcmXUB3dmMNr5va8hUOE4KTtt7aFtB13jbU0WNjX9MN1gWCHnW'),
