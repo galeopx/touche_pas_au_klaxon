@@ -67,11 +67,11 @@ Pour exécuter les tests unitaires :
 
 ### Administrateur
 - Email : arthur.henry@email.fr
-- Mot de passe : password123
+- Mot de passe : password
 
 ### Utilisateur standard
 - Email : alexandre.martin@email.fr
-- Mot de passe : password123
+- Mot de passe : password
 
 ## Technologies utilisées
 
