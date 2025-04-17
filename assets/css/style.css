@@ -1,0 +1,54 @@
+/* Palette de couleurs de l'application */
+:root {
+    --primary: #0074c7;
+    --secondary: #00497c;
+    --dark: #384050;
+    --danger: #cd2c2e;
+    --success: #82b864;
+    --light: #f1f8fc;
+  }
+  
+  body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--light);
+  }
+  
+  main {
+    flex: 1;
+  }
+  
+  .navbar {
+    background-color: var(--secondary) !important;
+  }
+  
+  .btn-primary {
+    background-color: var(--primary);
+    border-color: var(--primary);
+  }
+  
+  .btn-success {
+    background-color: var(--success);
+    border-color: var(--success);
+  }
+  
+  .btn-danger {
+    background-color: var(--danger);
+    border-color: var(--danger);
+  }
+  
+  .table-dark {
+    background-color: var(--dark);
+  }
+  
+  .card-header {
+    background-color: var(--secondary);
+    color: white;
+  }
+  
+  footer {
+    background-color: var(--dark);
+    color: white;
+    padding: 1rem 0;
+  }
