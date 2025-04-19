@@ -5,7 +5,9 @@
     "license": "proprietary",
     "autoload": {
         "psr-4": {
-            "App\\": "./"
+            "Controllers\\": "controllers/",
+            "Models\\": "models/",
+            "Utils\\": "utils/"
         }
     },
     "require": {

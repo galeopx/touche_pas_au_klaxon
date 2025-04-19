@@ -5,7 +5,7 @@
  * @package Touche Pas Au Klaxon
  */
 
-namespace App\Controllers;
+namespace Controllers;
 
 class HomeController
 {
@@ -17,7 +17,7 @@ class HomeController
     public function index()
     {
         // Récupérer les trajets disponibles à venir, triés par date
-        $trajetModel = new \App\Models\Trajet();
+        $trajetModel = new \Models\Trajet();
         $trajets = $trajetModel->getAvailableTrajets();
         
         // Charger la vue

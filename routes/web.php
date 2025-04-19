@@ -12,7 +12,7 @@ $router = new Router([
         'controllers' => '../controllers',
     ],
     'namespaces' => [
-        'controllers' => 'App\Controllers',
+        'controllers' => 'Controllers',
     ]
 ]);
 

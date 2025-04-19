@@ -5,7 +5,7 @@
  * @package Touche Pas Au Klaxon
  */
 
-namespace App\Models;
+namespace Models;
 
 class Trajet
 {
