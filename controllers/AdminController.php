@@ -5,7 +5,7 @@
  * @package Touche Pas Au Klaxon
  */
 
-namespace App\Controllers;
+namespace Controllers;
 
 class AdminController
 {
@@ -26,7 +26,7 @@ class AdminController
      */
     public function users()
     {
-        $userModel = new \App\Models\User();
+        $userModel = new \Models\User();
         $users = $userModel->getAll();
         
         require_once '../views/admin/users.php';
@@ -39,7 +39,7 @@ class AdminController
      */
     public function agences()
     {
-        $agenceModel = new \App\Models\Agence();
+        $agenceModel = new \Models\Agence();
         $agences = $agenceModel->getAll();
         
         require_once '../views/admin/agences.php';
@@ -66,7 +66,7 @@ class AdminController
             $nom = filter_input(INPUT_POST, 'nom', FILTER_SANITIZE_STRING);
             
             if (!empty($nom)) {
-                $agenceModel = new \App\Models\Agence();
+                $agenceModel = new \Models\Agence();
                 
                 if ($agenceModel->create(['nom' => $nom])) {
                     $_SESSION['flash'] = [
@@ -95,7 +95,7 @@ class AdminController
      */
     public function editAgence($id)
     {
-        $agenceModel = new \App\Models\Agence();
+        $agenceModel = new \Models\Agence();
         $agence = $agenceModel->findById($id);
         
         if (!$agence) {
@@ -148,7 +148,7 @@ class AdminController
      */
     public function deleteAgence($id)
     {
-        $agenceModel = new \App\Models\Agence();
+        $agenceModel = new \Models\Agence();
         
         if ($agenceModel->delete($id)) {
             $_SESSION['flash'] = [
@@ -173,7 +173,7 @@ class AdminController
      */
     public function trajets()
     {
-        $trajetModel = new \App\Models\Trajet();
+        $trajetModel = new \Models\Trajet();
         $trajets = $trajetModel->getAllWithDetails();
         
         require_once '../views/admin/trajets.php';
@@ -187,7 +187,7 @@ class AdminController
      */
     public function deleteTrajet($id)
     {
-        $trajetModel = new \App\Models\Trajet();
+        $trajetModel = new \Models\Trajet();
         
         if ($trajetModel->delete($id)) {
             $_SESSION['flash'] = [

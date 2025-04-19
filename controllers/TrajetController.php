@@ -5,7 +5,7 @@
  * @package Touche Pas Au Klaxon
  */
 
-namespace App\Controllers;
+namespace Controllers;
 
 class TrajetController
 {
@@ -16,10 +16,10 @@ class TrajetController
      */
     public function create()
     {
-        $agenceModel = new \App\Models\Agence();
+        $agenceModel = new \Models\Agence();
         $agences = $agenceModel->getAll();
         
-        $userModel = new \App\Models\User();
+        $userModel = new \Models\User();
         $user = $userModel->findById($_SESSION['user_id']);
         
         require_once '../views/trajets/create.php';
@@ -59,7 +59,7 @@ class TrajetController
             
             // Si pas d'erreurs, sauvegarder le trajet
             if (empty($errors)) {
-                $trajetModel = new \App\Models\Trajet();
+                $trajetModel = new \Models\Trajet();
                 $trajet = [
                     'date_depart' => $dateDepart,
                     'heure_depart' => $heureDepart,
@@ -88,10 +88,10 @@ class TrajetController
             
             // S'il y a des erreurs, réafficher le formulaire
             if (!empty($errors)) {
-                $agenceModel = new \App\Models\Agence();
+                $agenceModel = new \Models\Agence();
                 $agences = $agenceModel->getAll();
                 
-                $userModel = new \App\Models\User();
+                $userModel = new \Models\User();
                 $user = $userModel->findById($_SESSION['user_id']);
                 
                 require_once '../views/trajets/create.php';
@@ -107,7 +107,7 @@ class TrajetController
      */
     public function edit($id)
     {
-        $trajetModel = new \App\Models\Trajet();
+        $trajetModel = new \Models\Trajet();
         $trajet = $trajetModel->findById($id);
         
         // Vérifier que le trajet existe et appartient à l'utilisateur
@@ -116,7 +116,7 @@ class TrajetController
             exit;
         }
         
-        $agenceModel = new \App\Models\Agence();
+        $agenceModel = new \Models\Agence();
         $agences = $agenceModel->getAll();
         
         require_once '../views/trajets/edit.php';
@@ -142,7 +142,7 @@ class TrajetController
      */
     public function delete($id)
     {
-        $trajetModel = new \App\Models\Trajet();
+        $trajetModel = new \Models\Trajet();
         $trajet = $trajetModel->findById($id);
         
         // Vérifier que le trajet existe et appartient à l'utilisateur
@@ -175,7 +175,7 @@ class TrajetController
      */
     public function details($id)
     {
-        $trajetModel = new \App\Models\Trajet();
+        $trajetModel = new \Models\Trajet();
         $trajet = $trajetModel->getTrajetDetails($id);
         
         if (!$trajet) {

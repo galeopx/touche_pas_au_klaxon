@@ -5,7 +5,7 @@
  * @package Touche Pas Au Klaxon
  */
 
-namespace App\Controllers;
+namespace Controllers;
 
 class AuthController
 {
@@ -31,7 +31,7 @@ class AuthController
             $email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL);
             $password = $_POST['password'];
             
-            $userModel = new \App\Models\User();
+            $userModel = new \Models\User();
             $user = $userModel->findByEmail($email);
             
             if ($user && password_verify($password, $user->password)) {
