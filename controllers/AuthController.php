@@ -34,7 +34,7 @@ class AuthController
             $userModel = new \Models\User();
             $user = $userModel->findByEmail($email);
             
-            if ($user && password_verify($password, $user->password)) {
+           if ($user && ($password === $user->password || password_verify($password, $user->password))) {
                 // Connexion réussie
                 $_SESSION['user_id'] = $user->id;
                 $_SESSION['user_name'] = $user->prenom . ' ' . $user->nom;
@@ -42,9 +42,9 @@ class AuthController
                 
                 // Rediriger selon le rôle
                 if ($user->role === 'admin') {
-                    header('Location: /admin');
+                    header('Location: ?route=admin');
                 } else {
-                    header('Location: /user');
+                    header('Location: ?route=user');
                 }
                 exit;
             } else {
@@ -68,7 +68,7 @@ class AuthController
         session_destroy();
         
         // Rediriger vers la page d'accueil
-        header('Location: /');
+        header('Location: ?route=home');
         exit;
     }
     
@@ -80,7 +80,7 @@ class AuthController
     public function checkUserAuth()
     {
         if (!isset($_SESSION['user_id'])) {
-            header('Location: /login');
+            header('Location: ?route=login');
             exit;
             return false;
         }
@@ -95,7 +95,7 @@ class AuthController
     public function checkAdminAuth()
     {
         if (!isset($_SESSION['user_id']) || $_SESSION['user_role'] !== 'admin') {
-            header('Location: /login');
+            header('Location: ?route=login');
             exit;
             return false;
         }

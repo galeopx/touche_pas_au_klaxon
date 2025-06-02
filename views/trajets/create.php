@@ -108,14 +108,14 @@ document.addEventListener('DOMContentLoaded', function() {
     const heureArrivee = document.getElementById('heure_arrivee');
     
     form.addEventListener('submit', function(e) {
-        // Vérifier que les agences sont différentes
+        // Vérifier que les agences soient différentes
         if (agenceDepart.value === agenceArrivee.value) {
             e.preventDefault();
             alert("L'agence de départ et d'arrivée doivent être différentes.");
             return;
         }
         
-        // Vérifier que la date/heure d'arrivée est postérieure à la date/heure de départ
+        // Vérifier que la date et l'heure d'arrivée est postérieure à la date/heure de départ
         const departDateTime = new Date(dateDepart.value + 'T' + heureDepart.value);
         const arriveeDateTime = new Date(dateArrivee.value + 'T' + heureArrivee.value);
         

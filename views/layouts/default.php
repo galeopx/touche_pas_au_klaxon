@@ -16,7 +16,7 @@
         <?php 
         // Afficher les messages flash
         require_once APP_ROOT . '/utils/Flash.php';
-        \App\Utils\Flash::display();
+        //\App\Utils\Flash::display();
         
         // Contenu principal
         echo $content ?? 'Aucun contenu à afficher';

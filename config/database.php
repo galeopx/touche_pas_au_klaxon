@@ -22,7 +22,7 @@ class Database
     public function __construct()
     {
         // Configuration DSN
-        $dsn = 'mysql:host=' . $this->host . ';dbname=' . $this->dbname;
+        $dsn = 'mysql:host=' . $this->host . ';dbname=' . $this->dbname . ';charset=utf8mb4';
         $options = array(
             PDO::ATTR_PERSISTENT => true,
             PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
@@ -33,9 +33,12 @@ class Database
         // Création de l'instance PDO
         try {
             $this->dbh = new PDO($dsn, $this->user, $this->pass, $options);
+            $this->dbh->exec("SET NAMES 'utf8mb4'");
         } catch (PDOException $e) {
             $this->error = $e->getMessage();
-            echo 'Erreur de connexion : ' . $this->error;
+            // En développement, afficher l'erreur clairement
+            die('Erreur de connexion à la base de données : ' . $this->error . '<br>' . 
+                'Vérifiez vos paramètres dans config/config.php');
         }
     }
 
@@ -46,6 +49,9 @@ class Database
      */
     public function query($sql)
     {
+        if (!$this->dbh) {
+            throw new Exception("Connexion à la base de données non établie");
+        }
         $this->stmt = $this->dbh->prepare($sql);
     }
 
@@ -84,7 +90,11 @@ class Database
      */
     public function execute()
     {
-        return $this->stmt->execute();
+        try {
+            return $this->stmt->execute();
+        } catch (PDOException $e) {
+            throw new Exception("Erreur d'exécution de la requête : " . $e->getMessage());
+        }
     }
 
     /**
@@ -127,5 +137,35 @@ class Database
     public function lastInsertId()
     {
         return $this->dbh->lastInsertId();
+    }
+
+    /**
+     * Débute une transaction
+     * 
+     * @return bool
+     */
+    public function beginTransaction()
+    {
+        return $this->dbh->beginTransaction();
+    }
+
+    /**
+     * Valide une transaction
+     * 
+     * @return bool
+     */
+    public function endTransaction()
+    {
+        return $this->dbh->commit();
+    }
+
+    /**
+     * Annule une transaction
+     * 
+     * @return bool
+     */
+    public function cancelTransaction()
+    {
+        return $this->dbh->rollBack();
     }
 }
