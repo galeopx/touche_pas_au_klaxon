@@ -1,0 +1,10 @@
+RewriteEngine On
+
+# Test simple : rediriger login vers index.php
+RewriteRule ^login$ index.php [QSA,L]
+RewriteRule ^test_rewrite.php$ index.php [QSA,L]
+
+# Règle générale pour tout le reste
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.php [QSA,L]

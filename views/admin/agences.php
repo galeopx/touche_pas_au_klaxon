@@ -6,7 +6,7 @@ ob_start();
 <h1 class="mb-4">Gestion des agences</h1>
 
 <div class="mb-3">
-    <a href="/admin/agence/create" class="btn btn-success">
+    <a href="?route=admin_agence_create" class="btn btn-success">
         <i class="bi bi-plus-lg"></i> Ajouter une agence
     </a>
 </div>
@@ -33,10 +33,10 @@ ob_start();
                                 <td><?= $agence->id ?></td>
                                 <td><?= htmlspecialchars($agence->nom) ?></td>
                                 <td>
-                                    <a href="/admin/agence/edit/<?= $agence->id ?>" class="btn btn-sm btn-warning" title="Modifier">
+                                    <a href="?route=admin_agence_edit&id=<?= $agence->id ?>" class="btn btn-sm btn-warning" title="Modifier">
                                         <i class="bi bi-pencil"></i> Modifier
                                     </a>
-                                    <a href="/admin/agence/delete/<?= $agence->id ?>" class="btn btn-sm btn-danger" title="Supprimer" onclick="return confirm('Êtes-vous sûr de vouloir supprimer cette agence ?')">
+                                    <a href="?route=admin_agence_delete&id=<?= $agence->id ?>" class="btn btn-sm btn-danger" title="Supprimer" onclick="return confirm('Êtes-vous sûr de vouloir supprimer cette agence ?')">
                                         <i class="bi bi-trash"></i> Supprimer
                                     </a>
                                 </td>

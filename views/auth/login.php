@@ -15,7 +15,7 @@ ob_start();
                         <?= $error ?>
                     </div>
                 <?php endif; ?>
-                <form method="POST" action="/login">
+                <form method="POST" action="?route=login_post">
                     <div class="mb-3">
                         <label for="email" class="form-label">Email</label>
                         <input type="email" class="form-control" id="email" name="email" required>

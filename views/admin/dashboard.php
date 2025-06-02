@@ -13,7 +13,7 @@ ob_start();
             </div>
             <div class="card-body">
                 <p>Gérer les utilisateurs de l'application.</p>
-                <a href="/admin/users" class="btn btn-primary">Voir les utilisateurs</a>
+                <a href="?route=admin_users" class="btn btn-primary">Voir les utilisateurs</a>
             </div>
         </div>
     </div>
@@ -25,7 +25,7 @@ ob_start();
             </div>
             <div class="card-body">
                 <p>Gérer les agences (villes) disponibles.</p>
-                <a href="/admin/agences" class="btn btn-secondary">Voir les agences</a>
+                <a href="?route=admin_agences" class="btn btn-secondary">Voir les agences</a>
             </div>
         </div>
     </div>
@@ -37,7 +37,7 @@ ob_start();
             </div>
             <div class="card-body">
                 <p>Gérer tous les trajets de l'application.</p>
-                <a href="/admin/trajets" class="btn btn-dark">Voir les trajets</a>
+                <a href="?route=admin_trajets" class="btn btn-dark">Voir les trajets</a>
             </div>
         </div>
     </div>
