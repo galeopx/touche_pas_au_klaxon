@@ -19,7 +19,7 @@ INSERT INTO agence (nom) VALUES
 -- Insertion des utilisateurs
 -- Note: Les mots de passe sont definis comme 'password' hache avec password_hash()
 INSERT INTO utilisateur (nom, prenom, telephone, email, role, password) VALUES
-('Martin', 'Alexandre', '0612345678', 'alexandre.martin@email.fr', 'user', '$2y$10$LTQtcmXUB3dmMNr5va8hUOE4KTtt7aFtB13jbU0WNjX9MN1gWCHnW'),
+('Martin', 'Alexandre', '0612345678', 'alexandre.martin@email.fr', 'user', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi'),
 ('Dubois', 'Sophie', '0698765432', 'sophie.dubois@email.fr', 'user', '$2y$10$LTQtcmXUB3dmMNr5va8hUOE4KTtt7aFtB13jbU0WNjX9MN1gWCHnW'),
 ('Bernard', 'Julien', '0622446688', 'julien.bernard@email.fr', 'user', '$2y$10$LTQtcmXUB3dmMNr5va8hUOE4KTtt7aFtB13jbU0WNjX9MN1gWCHnW'),
 ('Moreau', 'Camille', '0611223344', 'camille.moreau@email.fr', 'user', '$2y$10$LTQtcmXUB3dmMNr5va8hUOE4KTtt7aFtB13jbU0WNjX9MN1gWCHnW'),
@@ -38,7 +38,7 @@ INSERT INTO utilisateur (nom, prenom, telephone, email, role, password) VALUES
 ('Girard', 'Sarah', '0688665544', 'sarah.girard@email.fr', 'user', '$2y$10$LTQtcmXUB3dmMNr5va8hUOE4KTtt7aFtB13jbU0WNjX9MN1gWCHnW'),
 ('Lambert', 'Hugo', '0611223366', 'hugo.lambert@email.fr', 'user', '$2y$10$LTQtcmXUB3dmMNr5va8hUOE4KTtt7aFtB13jbU0WNjX9MN1gWCHnW'),
 ('Masson', 'Julie', '0733445566', 'julie.masson@email.fr', 'user', '$2y$10$LTQtcmXUB3dmMNr5va8hUOE4KTtt7aFtB13jbU0WNjX9MN1gWCHnW'),
-('Henry', 'Arthur', '0666554433', 'arthur.henry@email.fr', 'admin', '$2y$10$LTQtcmXUB3dmMNr5va8hUOE4KTtt7aFtB13jbU0WNjX9MN1gWCHnW');
+('Henry', 'Arthur', '0666554433', 'arthur.henry@email.fr', 'admin', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi');
 
 -- Insertion de quelques trajets d'exemple
 -- Dates futures pour que les trajets soient visibles
