@@ -34,7 +34,7 @@ class AuthController
             $userModel = new \Models\User();
             $user = $userModel->findByEmail($email);
             
-           if ($user && ($password === $user->password || password_verify($password, $user->password))) {
+            if ($user && password_verify($password, $user->password)) {
                 // Connexion réussie
                 $_SESSION['user_id'] = $user->id;
                 $_SESSION['user_name'] = $user->prenom . ' ' . $user->nom;
